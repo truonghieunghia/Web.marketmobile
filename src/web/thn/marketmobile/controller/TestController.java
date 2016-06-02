@@ -27,7 +27,7 @@ public class TestController extends controllerBase {
 		String test = "";
 		ArrayList<UserEntry> lst = connect.executeQueryEntry(UserEntry.class, null);
 		for (UserEntry obj : lst){
-			test += obj.getuserName();
+			test += obj.getUserName();
 		}		
 //		return new View("/testview/index",ViewAction.FORWARD);
 		return new View(test, ViewAction.OUTTEXT);

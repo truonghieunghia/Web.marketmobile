@@ -153,7 +153,7 @@ public class GeneralEntry {
 					String setField = Field.substring(1);
 					String temp = Field.substring(0, 1).toLowerCase();
 
-					setField = temp + setField.toLowerCase();
+					setField = temp + setField;
 					if (Type.contains("int")) {
 						if (Type.contains("bigint")) {
 							Type = "Long.class";
@@ -169,12 +169,12 @@ public class GeneralEntry {
 						Type = "String.class";
 						type = "String";
 					}
-					writer.println("\tpublic " + type + " get" + Field + "() {");
+					writer.println("\tpublic " + type + " get" + Field.substring(0,1).toUpperCase()+Field.substring(1) + "() {");
 					writer.println("\t\treturn " + Field + ";");
 					writer.println("\t}");
 					writer.println();
-					writer.println("\tpublic void set" + Field + "(" + type + " " + setField + ") {");
-					writer.println("\t\t" + Field + " = " + setField + ";");
+					writer.println("\tpublic void set" + Field.substring(0,1).toUpperCase()+Field.substring(1) + "(" + type + " " + setField + ") {");
+					writer.println("\t\tthis." + Field + " = " + setField + ";");
 					writer.println("\t}");
 					writer.println();
 				}
