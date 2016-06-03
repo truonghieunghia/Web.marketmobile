@@ -4,25 +4,27 @@ import java.io.Serializable;
 
 import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
+import groupbase.thn.web.libs.database.Table;
 
 @EntryAnnotation(TableName = "user")
-public class UserEntry implements Serializable {
+public class UserEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String userID_Field = "userID";
-	public static String userEmail_Field = "userEmail";
-	public static String userName_Field = "userName";
-	public static String userPhoneNumber_Field = "userPhoneNumber";
-	public static String userAddress_Field = "userAddress";
-	public static String userLatitude_Field = "userLatitude";
-	public static String userLongitude_Field = "userLongitude";
-	public static String userPassWord_Field = "userPassWord";
-	public static String userDeviceID_Field = "userDeviceID";
-	public static String userLocationID_Field = "userLocationID";
-	public static String userLocationName_Field = "userLocationName";
-	public static String userRoleID_Field = "userRoleID";
-	public static String userRoleName_Field = "userRoleName";
-	public static String userState_Field = "userState";
+	public static String userID_Col = "userID";
+	public static String userEmail_Col = "userEmail";
+	public static String userName_Col = "userName";
+	public static String userPhoneNumber_Col = "userPhoneNumber";
+	public static String userAddress_Col = "userAddress";
+	public static String userLatitude_Col = "userLatitude";
+	public static String userLongitude_Col = "userLongitude";
+	public static String userPassWord_Col = "userPassWord";
+	public static String userDeviceID_Col = "userDeviceID";
+	public static String userLocationID_Col = "userLocationID";
+	public static String userLocationName_Col = "userLocationName";
+	public static String userRoleID_Col = "userRoleID";
+	public static String userRoleName_Col = "userRoleName";
+	public static String userState_Col = "userState";
+	public static String branchID_Col = "branchID";
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
 	private int userID;
@@ -65,6 +67,9 @@ public class UserEntry implements Serializable {
 
 	@ColumnNameAnnotation(ColumnName = "userState", FieldType = Integer.class, MaxLength = 11)
 	private int userState;
+
+	@ColumnNameAnnotation(ColumnName = "branchID", FieldType = Integer.class, MaxLength = 11)
+	private int branchID;
 
 	public int getUserID() {
 		return userID;
@@ -176,6 +181,14 @@ public class UserEntry implements Serializable {
 
 	public void setUserState(int userState) {
 		this.userState = userState;
+	}
+
+	public int getBranchID() {
+		return branchID;
+	}
+
+	public void setBranchID(int branchID) {
+		this.branchID = branchID;
 	}
 
 }

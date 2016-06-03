@@ -1,5 +1,7 @@
 import java.util.HashMap;
 
+import groupbase.thn.web.libs.database.Table;
+
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -67,7 +69,16 @@ public class GeneralEntry {
 //				writer.close();
 //			}
 			for (String table : listTable) {
-				PrintWriter writer = new PrintWriter(Path + table.substring(0,1).toUpperCase()+table.substring(1) + "Entry.java");
+				String clazzname="";
+				String[] lstclazzname = table.split("_");
+				if(lstclazzname.length>1){
+					for(int i=0;i<lstclazzname.length;i++){
+						clazzname +=lstclazzname[i].substring(0,1).toUpperCase()+lstclazzname[i].substring(1);
+					}
+				} else{
+					clazzname=table.substring(0,1).toUpperCase()+table.substring(1);
+				}
+				PrintWriter writer = new PrintWriter(Path + clazzname + "Entry.java");
 				writer.println("package "+packageEntry);
 				writer.println();
 
@@ -75,9 +86,10 @@ public class GeneralEntry {
 				writer.println();
 				writer.println("import groupbase.thn.web.libs.database.ColumnNameAnnotation;");
 				writer.println("import groupbase.thn.web.libs.database.EntryAnnotation;");
+				writer.println("import groupbase.thn.web.libs.database.Table;");
 				writer.println();
 				writer.println("@EntryAnnotation(TableName = \"" + table + "\")");
-				writer.println("public class " + table.substring(0,1).toUpperCase()+table.substring(1) + "Entry implements Serializable {");
+				writer.println("public class " + clazzname + "Entry extends Table implements Serializable {");
 				writer.println();
 				writer.println("\tprivate static final long serialVersionUID = 1L;");
 
@@ -87,7 +99,7 @@ public class GeneralEntry {
 					@SuppressWarnings("unchecked")
 					HashMap<String, Object> columnDetail = (HashMap<String, Object>) obj;
 					String Field = columnDetail.get("Field").toString();
-					writer.println("\tpublic static String " + Field + "_Field = \"" + Field + "\";");
+					writer.println("\tpublic static String " + Field + "_Col = \"" + Field + "\";");
 
 				}
 				writer.println();

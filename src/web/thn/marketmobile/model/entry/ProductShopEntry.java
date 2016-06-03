@@ -4,26 +4,27 @@ import java.io.Serializable;
 
 import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
+import groupbase.thn.web.libs.database.Table;
 
 @EntryAnnotation(TableName = "product_shop")
-public class Product_shopEntry implements Serializable {
+public class ProductShopEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String product_shopUserID_Field = "product_shopUserID";
-	public static String product_shopID_Field = "product_shopID";
-	public static String product_shopName_Field = "product_shopName";
-	public static String product_shopColor_Field = "product_shopColor";
-	public static String product_shopColorName_Field = "product_shopColorName";
-	public static String product_shopTypeID_Field = "product_shopTypeID";
-	public static String product_shopTypeName_Field = "product_shopTypeName";
-	public static String product_shopStateID_Field = "product_shopStateID";
-	public static String product_shopStateName_Field = "product_shopStateName";
-	public static String product_shopImage_Field = "product_shopImage";
-	public static String product_shopBrandID_Field = "product_shopBrandID";
-	public static String product_shopBrandName_Field = "product_shopBrandName";
-	public static String product_shopStorageID_Field = "product_shopStorageID";
-	public static String product_shopStorageName_Field = "product_shopStorageName";
-	public static String product_shopInfoID_Field = "product_shopInfoID";
+	public static String product_shopUserID_Col = "product_shopUserID";
+	public static String product_shopID_Col = "product_shopID";
+	public static String product_shopName_Col = "product_shopName";
+	public static String product_shopColor_Col = "product_shopColor";
+	public static String product_shopColorName_Col = "product_shopColorName";
+	public static String product_shopTypeID_Col = "product_shopTypeID";
+	public static String product_shopTypeName_Col = "product_shopTypeName";
+	public static String product_shopStateID_Col = "product_shopStateID";
+	public static String product_shopStateName_Col = "product_shopStateName";
+	public static String product_shopImage_Col = "product_shopImage";
+	public static String product_shopBrandID_Col = "product_shopBrandID";
+	public static String product_shopBrandName_Col = "product_shopBrandName";
+	public static String product_shopStorageID_Col = "product_shopStorageID";
+	public static String product_shopStorageName_Col = "product_shopStorageName";
+	public static String product_shopInfoID_Col = "product_shopInfoID";
 
 	@ColumnNameAnnotation(ColumnName = "product_shopUserID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
 	private int product_shopUserID;

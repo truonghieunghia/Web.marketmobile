@@ -9,27 +9,62 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.sql.DataSource;
 
-public class MysqlConnect {
+import org.apache.tomcat.jdbc.pool.DataSource;
+
+public class DataBase {
 	private Connection mConnection = null;
 	private Statement mStatement = null;
 	private ResultSet mResultSet = null;
 	private ResultData mResultData = null;
 	private PreparedStatement mPreparedStatement = null;
 
+	public <T> T getTable(Class<T> entry) {
+		try {
+			return entry.cast(entry.newInstance());
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			return null;
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
+	@SuppressWarnings("static-access")
 	private void open() {
 		try {
 			InitialContext ctx = new InitialContext();
 			DataSource dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/marketmobile");
-			mConnection = dataSource.getConnection();
+			Future<Connection> future = dataSource.getConnectionAsync();
+			while (!future.isDone()) {
+				System.out.println("Connection is not yet available. Do some background work");
+				try {
+					Thread.sleep(100); // simulate work
+				} catch (InterruptedException x) {
+					Thread.currentThread().interrupted();
+				}
+			}
+			mConnection = future.get();
 		} catch (NamingException e) {
 			mConnection = null;
 			System.out.println(e.toString());
 		} catch (SQLException e) {
+			System.out.println(e.toString());
+			mConnection = null;
+		} catch (InterruptedException e) {
+			System.out.println(e.toString());
+			mConnection = null;
+		} catch (ExecutionException e) {
 			System.out.println(e.toString());
 			mConnection = null;
 		}

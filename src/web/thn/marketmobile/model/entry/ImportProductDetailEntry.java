@@ -4,17 +4,18 @@ import java.io.Serializable;
 
 import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
+import groupbase.thn.web.libs.database.Table;
 
 @EntryAnnotation(TableName = "import_product_detail")
-public class Import_product_detailEntry implements Serializable {
+public class ImportProductDetailEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String import_productID_Field = "import_productID";
-	public static String product_shopID_Field = "product_shopID";
-	public static String product_shopName_Field = "product_shopName";
-	public static String STT_Field = "STT";
-	public static String number_Field = "number";
-	public static String price_Field = "price";
+	public static String import_productID_Col = "import_productID";
+	public static String product_shopID_Col = "product_shopID";
+	public static String product_shopName_Col = "product_shopName";
+	public static String STT_Col = "STT";
+	public static String number_Col = "number";
+	public static String price_Col = "price";
 
 	@ColumnNameAnnotation(ColumnName = "import_productID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
 	private int import_productID;

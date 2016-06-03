@@ -4,25 +4,26 @@ import java.io.Serializable;
 
 import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
+import groupbase.thn.web.libs.database.Table;
 
 @EntryAnnotation(TableName = "product")
-public class ProductEntry implements Serializable {
+public class ProductEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String productID_Field = "productID";
-	public static String productName_Field = "productName";
-	public static String productColor_Field = "productColor";
-	public static String productColorName_Field = "productColorName";
-	public static String productTypeID_Field = "productTypeID";
-	public static String productTypeName_Field = "productTypeName";
-	public static String productStateID_Field = "productStateID";
-	public static String productStateName_Field = "productStateName";
-	public static String productImage_Field = "productImage";
-	public static String productBrandID_Field = "productBrandID";
-	public static String productBrandName_Field = "productBrandName";
-	public static String productStorageID_Field = "productStorageID";
-	public static String productStorageName_Field = "productStorageName";
-	public static String productInfoID_Field = "productInfoID";
+	public static String productID_Col = "productID";
+	public static String productName_Col = "productName";
+	public static String productColor_Col = "productColor";
+	public static String productColorName_Col = "productColorName";
+	public static String productTypeID_Col = "productTypeID";
+	public static String productTypeName_Col = "productTypeName";
+	public static String productStateID_Col = "productStateID";
+	public static String productStateName_Col = "productStateName";
+	public static String productImage_Col = "productImage";
+	public static String productBrandID_Col = "productBrandID";
+	public static String productBrandName_Col = "productBrandName";
+	public static String productStorageID_Col = "productStorageID";
+	public static String productStorageName_Col = "productStorageName";
+	public static String productInfoID_Col = "productInfoID";
 
 	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
 	private String productID;

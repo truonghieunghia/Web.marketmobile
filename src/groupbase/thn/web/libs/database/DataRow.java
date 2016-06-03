@@ -52,6 +52,7 @@ public class DataRow {
 			}
 			return entry.cast(result);
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			return null;
 		}
 

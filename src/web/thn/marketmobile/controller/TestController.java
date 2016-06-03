@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.annotation.WebServlet;
 
 import groupbase.thn.web.libs.controller.controllerBase;
-import groupbase.thn.web.libs.database.MysqlConnect;
+import groupbase.thn.web.libs.database.DataBase;
 import groupbase.thn.web.libs.view.View;
 import groupbase.thn.web.libs.view.ViewAction;
 import web.thn.marketmobile.model.entry.UserEntry;
@@ -21,12 +21,12 @@ public class TestController extends controllerBase {
 	@Override
 	protected View doGet() {
 		// TODO Auto-generated method stub
-		MysqlConnect connect = new MysqlConnect(); 		
 //		connect.executeQueryEntry(UserEntry.class, null);
 //		ResultData result = connect.getResultData();
+		DataBase baseFactory = new DataBase();
 		String test = "";
-		ArrayList<UserEntry> lst = connect.executeQueryEntry(UserEntry.class, null);
-		for (UserEntry obj : lst){
+		ArrayList<UserEntry> lstdata = baseFactory.getTable(UserEntry.class).selectAll() ;
+		for (UserEntry obj : lstdata){
 			test += obj.getUserName();
 		}		
 //		return new View("/testview/index",ViewAction.FORWARD);

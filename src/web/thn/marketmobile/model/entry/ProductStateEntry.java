@@ -4,13 +4,14 @@ import java.io.Serializable;
 
 import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
+import groupbase.thn.web.libs.database.Table;
 
 @EntryAnnotation(TableName = "product_state")
-public class Product_stateEntry implements Serializable {
+public class ProductStateEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String product_stateID_Field = "product_stateID";
-	public static String product_stateName_Field = "product_stateName";
+	public static String product_stateID_Col = "product_stateID";
+	public static String product_stateName_Col = "product_stateName";
 
 	@ColumnNameAnnotation(ColumnName = "product_stateID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
 	private int product_stateID;
