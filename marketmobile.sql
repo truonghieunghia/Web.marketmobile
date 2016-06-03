@@ -574,22 +574,23 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL AUTO_INCREMENT COMMENT 'bảng thing tin user \n-người dùng \n-chủ cửa hàng \n-chi nhánh của hàng \n-quản trị hệ thống ',
   `userEmail` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
-  `userName` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userPhoneNumber` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userAddress` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userLatitude` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userLongitude` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userPassWord` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userDeviceID` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userLocationID` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userLocationName` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userRoleID` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userRoleName` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userState` int(11) DEFAULT NULL,
+  `userName` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `userPhoneNumber` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `userAddress` varchar(200) CHARACTER SET utf8 NOT NULL,
+  `userLatitude` varchar(15) CHARACTER SET utf8 NOT NULL,
+  `userLongitude` varchar(15) CHARACTER SET utf8 NOT NULL,
+  `userPassWord` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `userDeviceID` varchar(200) CHARACTER SET utf8 NOT NULL,
+  `userLocationID` varchar(3) CHARACTER SET utf8 NOT NULL,
+  `userLocationName` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `userRoleID` varchar(3) CHARACTER SET utf8 NOT NULL,
+  `userRoleName` varchar(45) CHARACTER SET utf8 NOT NULL,
+  `userState` int(11) DEFAULT '0',
+  `branchID` int(11) DEFAULT '0',
   PRIMARY KEY (`userID`,`userEmail`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -598,8 +599,31 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'','acnovn',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'','nghiath',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `user` VALUES (1,'','acnovn','','','','','','','','','','',0,0);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user_branch`
+--
+
+DROP TABLE IF EXISTS `user_branch`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user_branch` (
+  `branchID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL,
+  PRIMARY KEY (`branchID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user_branch`
+--
+
+LOCK TABLES `user_branch` WRITE;
+/*!40000 ALTER TABLE `user_branch` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_branch` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -611,4 +635,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-02 16:08:25
+-- Dump completed on 2016-06-03 14:37:58
