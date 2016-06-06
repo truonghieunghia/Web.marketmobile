@@ -10,29 +10,29 @@ import groupbase.thn.web.libs.database.Table;
 public class ProductStateEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String product_stateID_Col = "product_stateID";
-	public static String product_stateName_Col = "product_stateName";
+	public static String id_Col = "id";
+	public static String name_Col = "name";
 
-	@ColumnNameAnnotation(ColumnName = "product_stateID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int product_stateID;
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
+	private int id;
 
-	@ColumnNameAnnotation(ColumnName = "product_stateName", FieldType = String.class, MaxLength = 45)
-	private String product_stateName;
+	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
+	private String name;
 
-	public int getProduct_stateID() {
-		return product_stateID;
+	public int getId() {
+		return id;
 	}
 
-	public void setProduct_stateID(int product_stateID) {
-		this.product_stateID = product_stateID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getProduct_stateName() {
-		return product_stateName;
+	public String getName() {
+		return name;
 	}
 
-	public void setProduct_stateName(String product_stateName) {
-		this.product_stateName = product_stateName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

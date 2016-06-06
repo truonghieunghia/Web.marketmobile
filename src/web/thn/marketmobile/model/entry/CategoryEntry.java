@@ -10,29 +10,29 @@ import groupbase.thn.web.libs.database.Table;
 public class CategoryEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String categoryID_Col = "categoryID";
-	public static String categoryName_Col = "categoryName";
+	public static String id_Col = "id";
+	public static String name_Col = "name";
 
-	@ColumnNameAnnotation(ColumnName = "categoryID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int categoryID;
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
+	private int id;
 
-	@ColumnNameAnnotation(ColumnName = "categoryName", FieldType = String.class, MaxLength = 45)
-	private String categoryName;
+	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
+	private String name;
 
-	public int getCategoryID() {
-		return categoryID;
+	public int getId() {
+		return id;
 	}
 
-	public void setCategoryID(int categoryID) {
-		this.categoryID = categoryID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getCategoryName() {
-		return categoryName;
+	public String getName() {
+		return name;
 	}
 
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

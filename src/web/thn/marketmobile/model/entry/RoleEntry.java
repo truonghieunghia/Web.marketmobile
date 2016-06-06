@@ -10,29 +10,29 @@ import groupbase.thn.web.libs.database.Table;
 public class RoleEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String roleID_Col = "roleID";
-	public static String roleName_Col = "roleName";
+	public static String id_Col = "id";
+	public static String name_Col = "name";
 
-	@ColumnNameAnnotation(ColumnName = "roleID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int roleID;
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
+	private int id;
 
-	@ColumnNameAnnotation(ColumnName = "roleName", FieldType = String.class, MaxLength = 45)
-	private String roleName;
+	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
+	private String name;
 
-	public int getRoleID() {
-		return roleID;
+	public int getId() {
+		return id;
 	}
 
-	public void setRoleID(int roleID) {
-		this.roleID = roleID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getRoleName() {
-		return roleName;
+	public String getName() {
+		return name;
 	}
 
-	public void setRoleName(String roleName) {
-		this.roleName = roleName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

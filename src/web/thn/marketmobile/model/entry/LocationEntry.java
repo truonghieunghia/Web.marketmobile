@@ -10,29 +10,29 @@ import groupbase.thn.web.libs.database.Table;
 public class LocationEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String locationID_Col = "locationID";
-	public static String locationName_Col = "locationName";
+	public static String id_Col = "id";
+	public static String name_Col = "name";
 
-	@ColumnNameAnnotation(ColumnName = "locationID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int locationID;
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
+	private int id;
 
-	@ColumnNameAnnotation(ColumnName = "locationName", FieldType = String.class, MaxLength = 45)
-	private String locationName;
+	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
+	private String name;
 
-	public int getLocationID() {
-		return locationID;
+	public int getId() {
+		return id;
 	}
 
-	public void setLocationID(int locationID) {
-		this.locationID = locationID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getLocationName() {
-		return locationName;
+	public String getName() {
+		return name;
 	}
 
-	public void setLocationName(String locationName) {
-		this.locationName = locationName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

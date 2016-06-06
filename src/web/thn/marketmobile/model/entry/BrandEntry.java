@@ -10,29 +10,29 @@ import groupbase.thn.web.libs.database.Table;
 public class BrandEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String brandID_Col = "brandID";
-	public static String brandName_Col = "brandName";
+	public static String id_Col = "id";
+	public static String name_Col = "name";
 
-	@ColumnNameAnnotation(ColumnName = "brandID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int brandID;
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
+	private int id;
 
-	@ColumnNameAnnotation(ColumnName = "brandName", FieldType = String.class, MaxLength = 45)
-	private String brandName;
+	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
+	private String name;
 
-	public int getBrandID() {
-		return brandID;
+	public int getId() {
+		return id;
 	}
 
-	public void setBrandID(int brandID) {
-		this.brandID = brandID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getBrandName() {
-		return brandName;
+	public String getName() {
+		return name;
 	}
 
-	public void setBrandName(String brandName) {
-		this.brandName = brandName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

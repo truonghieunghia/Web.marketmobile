@@ -10,177 +10,189 @@ import groupbase.thn.web.libs.database.Table;
 public class UserEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String userID_Col = "userID";
-	public static String userEmail_Col = "userEmail";
-	public static String userName_Col = "userName";
-	public static String userPhoneNumber_Col = "userPhoneNumber";
-	public static String userAddress_Col = "userAddress";
-	public static String userLatitude_Col = "userLatitude";
-	public static String userLongitude_Col = "userLongitude";
-	public static String userPassWord_Col = "userPassWord";
-	public static String userDeviceID_Col = "userDeviceID";
-	public static String userLocationID_Col = "userLocationID";
-	public static String userLocationName_Col = "userLocationName";
-	public static String userRoleID_Col = "userRoleID";
-	public static String userRoleName_Col = "userRoleName";
-	public static String userState_Col = "userState";
+	public static String id_Col = "id";
+	public static String email_Col = "email";
+	public static String name_Col = "name";
+	public static String phoneNumber_Col = "phoneNumber";
+	public static String address_Col = "address";
+	public static String latitude_Col = "latitude";
+	public static String longitude_Col = "longitude";
+	public static String passWord_Col = "passWord";
+	public static String deviceID_Col = "deviceID";
+	public static String locationID_Col = "locationID";
+	public static String locationName_Col = "locationName";
+	public static String roleID_Col = "roleID";
+	public static String roleName_Col = "roleName";
+	public static String state_Col = "state";
 	public static String branchID_Col = "branchID";
+	public static String sex_Col = "sex";
+	public static String sexName_Col = "sexName";
+	public static String logo_Col = "logo";
 
-	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int userID;
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
+	private int id;
 
-	@ColumnNameAnnotation(ColumnName = "userEmail", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String userEmail;
+	@ColumnNameAnnotation(ColumnName = "email", FieldType = String.class, isPrimary = true, MaxLength = 45)
+	private String email;
 
-	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
-	private String userName;
+	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
+	private String name;
 
-	@ColumnNameAnnotation(ColumnName = "userPhoneNumber", FieldType = String.class, MaxLength = 20)
-	private String userPhoneNumber;
+	@ColumnNameAnnotation(ColumnName = "phoneNumber", FieldType = String.class, MaxLength = 20)
+	private String phoneNumber;
 
-	@ColumnNameAnnotation(ColumnName = "userAddress", FieldType = String.class, MaxLength = 200)
-	private String userAddress;
+	@ColumnNameAnnotation(ColumnName = "address", FieldType = String.class, MaxLength = 200)
+	private String address;
 
-	@ColumnNameAnnotation(ColumnName = "userLatitude", FieldType = String.class, MaxLength = 15)
-	private String userLatitude;
+	@ColumnNameAnnotation(ColumnName = "latitude", FieldType = String.class, MaxLength = 15)
+	private String latitude;
 
-	@ColumnNameAnnotation(ColumnName = "userLongitude", FieldType = String.class, MaxLength = 15)
-	private String userLongitude;
+	@ColumnNameAnnotation(ColumnName = "longitude", FieldType = String.class, MaxLength = 15)
+	private String longitude;
 
-	@ColumnNameAnnotation(ColumnName = "userPassWord", FieldType = String.class, MaxLength = 45)
-	private String userPassWord;
+	@ColumnNameAnnotation(ColumnName = "passWord", FieldType = String.class, MaxLength = 45)
+	private String passWord;
 
-	@ColumnNameAnnotation(ColumnName = "userDeviceID", FieldType = String.class, MaxLength = 200)
-	private String userDeviceID;
+	@ColumnNameAnnotation(ColumnName = "deviceID", FieldType = String.class, MaxLength = 200)
+	private String deviceID;
 
-	@ColumnNameAnnotation(ColumnName = "userLocationID", FieldType = String.class, MaxLength = 3)
-	private String userLocationID;
+	@ColumnNameAnnotation(ColumnName = "locationID", FieldType = String.class, MaxLength = 3)
+	private String locationID;
 
-	@ColumnNameAnnotation(ColumnName = "userLocationName", FieldType = String.class, MaxLength = 45)
-	private String userLocationName;
+	@ColumnNameAnnotation(ColumnName = "locationName", FieldType = String.class, MaxLength = 45)
+	private String locationName;
 
-	@ColumnNameAnnotation(ColumnName = "userRoleID", FieldType = String.class, MaxLength = 3)
-	private String userRoleID;
+	@ColumnNameAnnotation(ColumnName = "roleID", FieldType = String.class, MaxLength = 3)
+	private String roleID;
 
-	@ColumnNameAnnotation(ColumnName = "userRoleName", FieldType = String.class, MaxLength = 45)
-	private String userRoleName;
+	@ColumnNameAnnotation(ColumnName = "roleName", FieldType = String.class, MaxLength = 45)
+	private String roleName;
 
-	@ColumnNameAnnotation(ColumnName = "userState", FieldType = Integer.class, MaxLength = 11)
-	private int userState;
+	@ColumnNameAnnotation(ColumnName = "state", FieldType = Integer.class, MaxLength = 11)
+	private int state;
 
 	@ColumnNameAnnotation(ColumnName = "branchID", FieldType = Integer.class, MaxLength = 11)
 	private int branchID;
 
-	public int getUserID() {
-		return userID;
+	@ColumnNameAnnotation(ColumnName = "sex", FieldType = Integer.class, MaxLength = 11)
+	private int sex;
+
+	@ColumnNameAnnotation(ColumnName = "sexName", FieldType = String.class, MaxLength = 45)
+	private String sexName;
+
+	@ColumnNameAnnotation(ColumnName = "logo", FieldType = String.class, MaxLength = 45)
+	private String logo;
+
+	public int getId() {
+		return id;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getUserPhoneNumber() {
-		return userPhoneNumber;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public void setUserPhoneNumber(String userPhoneNumber) {
-		this.userPhoneNumber = userPhoneNumber;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
-	public String getUserAddress() {
-		return userAddress;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getUserLatitude() {
-		return userLatitude;
+	public String getLatitude() {
+		return latitude;
 	}
 
-	public void setUserLatitude(String userLatitude) {
-		this.userLatitude = userLatitude;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
 
-	public String getUserLongitude() {
-		return userLongitude;
+	public String getLongitude() {
+		return longitude;
 	}
 
-	public void setUserLongitude(String userLongitude) {
-		this.userLongitude = userLongitude;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
-	public String getUserPassWord() {
-		return userPassWord;
+	public String getPassWord() {
+		return passWord;
 	}
 
-	public void setUserPassWord(String userPassWord) {
-		this.userPassWord = userPassWord;
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
 	}
 
-	public String getUserDeviceID() {
-		return userDeviceID;
+	public String getDeviceID() {
+		return deviceID;
 	}
 
-	public void setUserDeviceID(String userDeviceID) {
-		this.userDeviceID = userDeviceID;
+	public void setDeviceID(String deviceID) {
+		this.deviceID = deviceID;
 	}
 
-	public String getUserLocationID() {
-		return userLocationID;
+	public String getLocationID() {
+		return locationID;
 	}
 
-	public void setUserLocationID(String userLocationID) {
-		this.userLocationID = userLocationID;
+	public void setLocationID(String locationID) {
+		this.locationID = locationID;
 	}
 
-	public String getUserLocationName() {
-		return userLocationName;
+	public String getLocationName() {
+		return locationName;
 	}
 
-	public void setUserLocationName(String userLocationName) {
-		this.userLocationName = userLocationName;
+	public void setLocationName(String locationName) {
+		this.locationName = locationName;
 	}
 
-	public String getUserRoleID() {
-		return userRoleID;
+	public String getRoleID() {
+		return roleID;
 	}
 
-	public void setUserRoleID(String userRoleID) {
-		this.userRoleID = userRoleID;
+	public void setRoleID(String roleID) {
+		this.roleID = roleID;
 	}
 
-	public String getUserRoleName() {
-		return userRoleName;
+	public String getRoleName() {
+		return roleName;
 	}
 
-	public void setUserRoleName(String userRoleName) {
-		this.userRoleName = userRoleName;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
-	public int getUserState() {
-		return userState;
+	public int getState() {
+		return state;
 	}
 
-	public void setUserState(int userState) {
-		this.userState = userState;
+	public void setState(int state) {
+		this.state = state;
 	}
 
 	public int getBranchID() {
@@ -189,6 +201,30 @@ public class UserEntry extends Table implements Serializable {
 
 	public void setBranchID(int branchID) {
 		this.branchID = branchID;
+	}
+
+	public int getSex() {
+		return sex;
+	}
+
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+
+	public String getSexName() {
+		return sexName;
+	}
+
+	public void setSexName(String sexName) {
+		this.sexName = sexName;
+	}
+
+	public String getLogo() {
+		return logo;
+	}
+
+	public void setLogo(String logo) {
+		this.logo = logo;
 	}
 
 }

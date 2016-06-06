@@ -6,19 +6,14 @@ import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
 import groupbase.thn.web.libs.database.Table;
 
-@EntryAnnotation(TableName = "product_shop")
-public class ProductShopEntry extends Table implements Serializable {
+@EntryAnnotation(TableName = "product_master")
+public class ProductMasterEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String userID_Col = "userID";
 	public static String id_Col = "id";
 	public static String name_Col = "name";
 	public static String imageList_Col = "imageList";
 	public static String detail_Col = "detail";
-	public static String userBranchID_Col = "userBranchID";
-
-	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
 
 	@ColumnNameAnnotation(ColumnName = "id", FieldType = String.class, isPrimary = true, MaxLength = 45)
 	private String id;
@@ -31,17 +26,6 @@ public class ProductShopEntry extends Table implements Serializable {
 
 	@ColumnNameAnnotation(ColumnName = "detail", FieldType = String.class, MaxLength = 45)
 	private String detail;
-
-	@ColumnNameAnnotation(ColumnName = "userBranchID", FieldType = Integer.class, MaxLength = 11)
-	private int userBranchID;
-
-	public int getUserID() {
-		return userID;
-	}
-
-	public void setUserID(int userID) {
-		this.userID = userID;
-	}
 
 	public String getId() {
 		return id;
@@ -73,14 +57,6 @@ public class ProductShopEntry extends Table implements Serializable {
 
 	public void setDetail(String detail) {
 		this.detail = detail;
-	}
-
-	public int getUserBranchID() {
-		return userBranchID;
-	}
-
-	public void setUserBranchID(int userBranchID) {
-		this.userBranchID = userBranchID;
 	}
 
 }
