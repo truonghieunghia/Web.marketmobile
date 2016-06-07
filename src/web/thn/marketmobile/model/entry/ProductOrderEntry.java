@@ -10,33 +10,57 @@ import groupbase.thn.web.libs.database.Table;
 public class ProductOrderEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String product_orderNO_Col = "product_orderNO";
+	public static String no_Col = "no";
 	public static String userID_Col = "userID";
-	public static String product_TotalPrice_Col = "product_TotalPrice";
-	public static String product_totalNumber_Col = "product_totalNumber";
-	public static String product_orderDate_Col = "product_orderDate";
+	public static String orderDate_Col = "orderDate";
+	public static String totalMoney_Col = "totalMoney";
+	public static String comment_Col = "comment";
+	public static String product_ordercol_Col = "product_ordercol";
+	public static String userOrderName_Col = "userOrderName";
+	public static String userOrderAddress_Col = "userOrderAddress";
+	public static String userOrderID_Col = "userOrderID";
+	public static String userOrderPhone_Col = "userOrderPhone";
+	public static String userOrderEmail_Col = "userOrderEmail";
 
-	@ColumnNameAnnotation(ColumnName = "product_orderNO", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int product_orderNO;
+	@ColumnNameAnnotation(ColumnName = "no", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int no;
 
-	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, MaxLength = 11)
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
 	private int userID;
 
-	@ColumnNameAnnotation(ColumnName = "product_TotalPrice", FieldType = Integer.class, MaxLength = 11)
-	private int product_TotalPrice;
+	@ColumnNameAnnotation(ColumnName = "orderDate", FieldType = String.class, MaxLength = 8)
+	private String orderDate;
 
-	@ColumnNameAnnotation(ColumnName = "product_totalNumber", FieldType = Integer.class, MaxLength = 11)
-	private int product_totalNumber;
+	@ColumnNameAnnotation(ColumnName = "totalMoney", FieldType = Double.class)
+	private double totalMoney;
 
-	@ColumnNameAnnotation(ColumnName = "product_orderDate", FieldType = String.class, MaxLength = 8)
-	private String product_orderDate;
+	@ColumnNameAnnotation(ColumnName = "comment", FieldType = String.class)
+	private String comment;
 
-	public int getProduct_orderNO() {
-		return product_orderNO;
+	@ColumnNameAnnotation(ColumnName = "product_ordercol", FieldType = String.class, MaxLength = 45)
+	private String product_ordercol;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderName", FieldType = String.class, MaxLength = 45)
+	private String userOrderName;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderAddress", FieldType = String.class, MaxLength = 45)
+	private String userOrderAddress;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderID", FieldType = Integer.class, MaxLength = 11)
+	private int userOrderID;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderPhone", FieldType = String.class, MaxLength = 45)
+	private String userOrderPhone;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderEmail", FieldType = String.class, MaxLength = 45)
+	private String userOrderEmail;
+
+	public int getNo() {
+		return no;
 	}
 
-	public void setProduct_orderNO(int product_orderNO) {
-		this.product_orderNO = product_orderNO;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
 	public int getUserID() {
@@ -47,28 +71,76 @@ public class ProductOrderEntry extends Table implements Serializable {
 		this.userID = userID;
 	}
 
-	public int getProduct_TotalPrice() {
-		return product_TotalPrice;
+	public String getOrderDate() {
+		return orderDate;
 	}
 
-	public void setProduct_TotalPrice(int product_TotalPrice) {
-		this.product_TotalPrice = product_TotalPrice;
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
 	}
 
-	public int getProduct_totalNumber() {
-		return product_totalNumber;
+	public double getTotalMoney() {
+		return totalMoney;
 	}
 
-	public void setProduct_totalNumber(int product_totalNumber) {
-		this.product_totalNumber = product_totalNumber;
+	public void setTotalMoney(double totalMoney) {
+		this.totalMoney = totalMoney;
 	}
 
-	public String getProduct_orderDate() {
-		return product_orderDate;
+	public String getComment() {
+		return comment;
 	}
 
-	public void setProduct_orderDate(String product_orderDate) {
-		this.product_orderDate = product_orderDate;
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public String getProduct_ordercol() {
+		return product_ordercol;
+	}
+
+	public void setProduct_ordercol(String product_ordercol) {
+		this.product_ordercol = product_ordercol;
+	}
+
+	public String getUserOrderName() {
+		return userOrderName;
+	}
+
+	public void setUserOrderName(String userOrderName) {
+		this.userOrderName = userOrderName;
+	}
+
+	public String getUserOrderAddress() {
+		return userOrderAddress;
+	}
+
+	public void setUserOrderAddress(String userOrderAddress) {
+		this.userOrderAddress = userOrderAddress;
+	}
+
+	public int getUserOrderID() {
+		return userOrderID;
+	}
+
+	public void setUserOrderID(int userOrderID) {
+		this.userOrderID = userOrderID;
+	}
+
+	public String getUserOrderPhone() {
+		return userOrderPhone;
+	}
+
+	public void setUserOrderPhone(String userOrderPhone) {
+		this.userOrderPhone = userOrderPhone;
+	}
+
+	public String getUserOrderEmail() {
+		return userOrderEmail;
+	}
+
+	public void setUserOrderEmail(String userOrderEmail) {
+		this.userOrderEmail = userOrderEmail;
 	}
 
 }

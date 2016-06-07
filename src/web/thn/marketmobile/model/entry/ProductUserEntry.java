@@ -6,10 +6,13 @@ import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
 import groupbase.thn.web.libs.database.Table;
 
-@EntryAnnotation(TableName = "product_master")
-public class ProductMasterEntry extends Table implements Serializable {
+@EntryAnnotation(TableName = "product_user")
+public class ProductUserEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	public static String userID_Col = "userID";
+	public static String userBranchID_Col = "userBranchID";
+	public static String userName_Col = "userName";
 	public static String productID_Col = "productID";
 	public static String productName_Col = "productName";
 	public static String originID_Col = "originID";
@@ -20,6 +23,17 @@ public class ProductMasterEntry extends Table implements Serializable {
 	public static String categoryName_Col = "categoryName";
 	public static String detail_Col = "detail";
 	public static String extID_Col = "extID";
+	public static String stateID_Col = "stateID";
+	public static String stateName_Col = "stateName";
+
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int userID;
+
+	@ColumnNameAnnotation(ColumnName = "userBranchID", FieldType = Integer.class, MaxLength = 11)
+	private int userBranchID;
+
+	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
+	private String userName;
 
 	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
 	private String productID;
@@ -50,6 +64,36 @@ public class ProductMasterEntry extends Table implements Serializable {
 
 	@ColumnNameAnnotation(ColumnName = "extID", FieldType = Integer.class, MaxLength = 11)
 	private int extID;
+
+	@ColumnNameAnnotation(ColumnName = "stateID", FieldType = Integer.class, MaxLength = 11)
+	private int stateID;
+
+	@ColumnNameAnnotation(ColumnName = "stateName", FieldType = String.class, MaxLength = 45)
+	private String stateName;
+
+	public int getUserID() {
+		return userID;
+	}
+
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+
+	public int getUserBranchID() {
+		return userBranchID;
+	}
+
+	public void setUserBranchID(int userBranchID) {
+		this.userBranchID = userBranchID;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 
 	public String getProductID() {
 		return productID;
@@ -129,6 +173,22 @@ public class ProductMasterEntry extends Table implements Serializable {
 
 	public void setExtID(int extID) {
 		this.extID = extID;
+	}
+
+	public int getStateID() {
+		return stateID;
+	}
+
+	public void setStateID(int stateID) {
+		this.stateID = stateID;
+	}
+
+	public String getStateName() {
+		return stateName;
+	}
+
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
 	}
 
 }

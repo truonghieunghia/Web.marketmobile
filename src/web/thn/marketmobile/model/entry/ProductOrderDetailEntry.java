@@ -10,77 +10,101 @@ import groupbase.thn.web.libs.database.Table;
 public class ProductOrderDetailEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String product_orderNO_Col = "product_orderNO";
-	public static String STT_Col = "STT";
-	public static String product_shopID_Col = "product_shopID";
-	public static String product_shopName_Col = "product_shopName";
-	public static String number_Col = "number";
+	public static String no_Col = "no";
+	public static String userID_Col = "userID";
+	public static String productID_Col = "productID";
+	public static String productName_Col = "productName";
+	public static String stt_Col = "stt";
 	public static String price_Col = "price";
+	public static String number_Col = "number";
+	public static String priceVAT_Col = "priceVAT";
 
-	@ColumnNameAnnotation(ColumnName = "product_orderNO", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int product_orderNO;
+	@ColumnNameAnnotation(ColumnName = "no", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int no;
 
-	@ColumnNameAnnotation(ColumnName = "STT", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String STT;
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int userID;
 
-	@ColumnNameAnnotation(ColumnName = "product_shopID", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String product_shopID;
+	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
+	private String productID;
 
-	@ColumnNameAnnotation(ColumnName = "product_shopName", FieldType = String.class, MaxLength = 45)
-	private String product_shopName;
+	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
+	private String productName;
 
-	@ColumnNameAnnotation(ColumnName = "number", FieldType = Integer.class, MaxLength = 11)
-	private int number;
+	@ColumnNameAnnotation(ColumnName = "stt", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int stt;
 
-	@ColumnNameAnnotation(ColumnName = "price", FieldType = Integer.class, MaxLength = 11)
-	private int price;
+	@ColumnNameAnnotation(ColumnName = "price", FieldType = Double.class)
+	private double price;
 
-	public int getProduct_orderNO() {
-		return product_orderNO;
+	@ColumnNameAnnotation(ColumnName = "number", FieldType = Double.class)
+	private double number;
+
+	@ColumnNameAnnotation(ColumnName = "priceVAT", FieldType = Double.class)
+	private double priceVAT;
+
+	public int getNo() {
+		return no;
 	}
 
-	public void setProduct_orderNO(int product_orderNO) {
-		this.product_orderNO = product_orderNO;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
-	public String getSTT() {
-		return STT;
+	public int getUserID() {
+		return userID;
 	}
 
-	public void setSTT(String sTT) {
-		this.STT = sTT;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
-	public String getProduct_shopID() {
-		return product_shopID;
+	public String getProductID() {
+		return productID;
 	}
 
-	public void setProduct_shopID(String product_shopID) {
-		this.product_shopID = product_shopID;
+	public void setProductID(String productID) {
+		this.productID = productID;
 	}
 
-	public String getProduct_shopName() {
-		return product_shopName;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProduct_shopName(String product_shopName) {
-		this.product_shopName = product_shopName;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public int getNumber() {
-		return number;
+	public int getStt() {
+		return stt;
 	}
 
-	public void setNumber(int number) {
-		this.number = number;
+	public void setStt(int stt) {
+		this.stt = stt;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	public double getNumber() {
+		return number;
+	}
+
+	public void setNumber(double number) {
+		this.number = number;
+	}
+
+	public double getPriceVAT() {
+		return priceVAT;
+	}
+
+	public void setPriceVAT(double priceVAT) {
+		this.priceVAT = priceVAT;
 	}
 
 }

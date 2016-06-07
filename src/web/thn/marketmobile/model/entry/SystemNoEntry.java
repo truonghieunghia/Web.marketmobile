@@ -6,37 +6,33 @@ import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
 import groupbase.thn.web.libs.database.Table;
 
-@EntryAnnotation(TableName = "systemNo")
+@EntryAnnotation(TableName = "system_no")
 public class SystemNoEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String shopID_Col = "shopID";
+	public static String userID_Col = "userID";
 	public static String importNo_Col = "importNo";
-	public static String orderNo_Col = "orderNo";
 	public static String exportNo_Col = "exportNo";
-	public static String shopName_Col = "shopName";
+	public static String orderNo_Col = "orderNo";
 
-	@ColumnNameAnnotation(ColumnName = "shopID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int shopID;
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int userID;
 
 	@ColumnNameAnnotation(ColumnName = "importNo", FieldType = Integer.class, MaxLength = 11)
 	private int importNo;
 
-	@ColumnNameAnnotation(ColumnName = "orderNo", FieldType = Integer.class, MaxLength = 11)
-	private int orderNo;
-
 	@ColumnNameAnnotation(ColumnName = "exportNo", FieldType = Integer.class, MaxLength = 11)
 	private int exportNo;
 
-	@ColumnNameAnnotation(ColumnName = "shopName", FieldType = String.class, MaxLength = 45)
-	private String shopName;
+	@ColumnNameAnnotation(ColumnName = "orderNo", FieldType = Integer.class, MaxLength = 11)
+	private int orderNo;
 
-	public int getShopID() {
-		return shopID;
+	public int getUserID() {
+		return userID;
 	}
 
-	public void setShopID(int shopID) {
-		this.shopID = shopID;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
 	public int getImportNo() {
@@ -47,14 +43,6 @@ public class SystemNoEntry extends Table implements Serializable {
 		this.importNo = importNo;
 	}
 
-	public int getOrderNo() {
-		return orderNo;
-	}
-
-	public void setOrderNo(int orderNo) {
-		this.orderNo = orderNo;
-	}
-
 	public int getExportNo() {
 		return exportNo;
 	}
@@ -63,12 +51,12 @@ public class SystemNoEntry extends Table implements Serializable {
 		this.exportNo = exportNo;
 	}
 
-	public String getShopName() {
-		return shopName;
+	public int getOrderNo() {
+		return orderNo;
 	}
 
-	public void setShopName(String shopName) {
-		this.shopName = shopName;
+	public void setOrderNo(int orderNo) {
+		this.orderNo = orderNo;
 	}
 
 }

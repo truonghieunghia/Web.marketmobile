@@ -10,77 +10,125 @@ import groupbase.thn.web.libs.database.Table;
 public class ProductExportEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String exportNO_Col = "exportNO";
-	public static String orderNO_Col = "orderNO";
+	public static String no_Col = "no";
 	public static String userID_Col = "userID";
-	public static String userName_Col = "userName";
-	public static String totalPrice_Col = "totalPrice";
-	public static String totalNumber_Col = "totalNumber";
+	public static String exportDate_Col = "exportDate";
+	public static String totalMoney_Col = "totalMoney";
+	public static String comment_Col = "comment";
+	public static String userOrderName_Col = "userOrderName";
+	public static String userOrderAddress_Col = "userOrderAddress";
+	public static String userOrderID_Col = "userOrderID";
+	public static String userOrderPhone_Col = "userOrderPhone";
+	public static String userOrderEmail_Col = "userOrderEmail";
 
-	@ColumnNameAnnotation(ColumnName = "exportNO", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
-	private int exportNO;
+	@ColumnNameAnnotation(ColumnName = "no", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int no;
 
-	@ColumnNameAnnotation(ColumnName = "orderNO", FieldType = Integer.class, MaxLength = 11)
-	private int orderNO;
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = String.class, isPrimary = true, MaxLength = 45)
+	private String userID;
 
-	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, MaxLength = 11)
-	private int userID;
+	@ColumnNameAnnotation(ColumnName = "exportDate", FieldType = String.class, MaxLength = 8)
+	private String exportDate;
 
-	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
-	private String userName;
+	@ColumnNameAnnotation(ColumnName = "totalMoney", FieldType = Double.class)
+	private double totalMoney;
 
-	@ColumnNameAnnotation(ColumnName = "totalPrice", FieldType = Integer.class, MaxLength = 11)
-	private int totalPrice;
+	@ColumnNameAnnotation(ColumnName = "comment", FieldType = String.class, MaxLength = 45)
+	private String comment;
 
-	@ColumnNameAnnotation(ColumnName = "totalNumber", FieldType = String.class, MaxLength = 45)
-	private String totalNumber;
+	@ColumnNameAnnotation(ColumnName = "userOrderName", FieldType = String.class, MaxLength = 45)
+	private String userOrderName;
 
-	public int getExportNO() {
-		return exportNO;
+	@ColumnNameAnnotation(ColumnName = "userOrderAddress", FieldType = String.class, MaxLength = 45)
+	private String userOrderAddress;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderID", FieldType = Integer.class, MaxLength = 11)
+	private int userOrderID;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderPhone", FieldType = String.class, MaxLength = 45)
+	private String userOrderPhone;
+
+	@ColumnNameAnnotation(ColumnName = "userOrderEmail", FieldType = String.class, MaxLength = 45)
+	private String userOrderEmail;
+
+	public int getNo() {
+		return no;
 	}
 
-	public void setExportNO(int exportNO) {
-		this.exportNO = exportNO;
+	public void setNo(int no) {
+		this.no = no;
 	}
 
-	public int getOrderNO() {
-		return orderNO;
-	}
-
-	public void setOrderNO(int orderNO) {
-		this.orderNO = orderNO;
-	}
-
-	public int getUserID() {
+	public String getUserID() {
 		return userID;
 	}
 
-	public void setUserID(int userID) {
+	public void setUserID(String userID) {
 		this.userID = userID;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getExportDate() {
+		return exportDate;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setExportDate(String exportDate) {
+		this.exportDate = exportDate;
 	}
 
-	public int getTotalPrice() {
-		return totalPrice;
+	public double getTotalMoney() {
+		return totalMoney;
 	}
 
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
+	public void setTotalMoney(double totalMoney) {
+		this.totalMoney = totalMoney;
 	}
 
-	public String getTotalNumber() {
-		return totalNumber;
+	public String getComment() {
+		return comment;
 	}
 
-	public void setTotalNumber(String totalNumber) {
-		this.totalNumber = totalNumber;
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public String getUserOrderName() {
+		return userOrderName;
+	}
+
+	public void setUserOrderName(String userOrderName) {
+		this.userOrderName = userOrderName;
+	}
+
+	public String getUserOrderAddress() {
+		return userOrderAddress;
+	}
+
+	public void setUserOrderAddress(String userOrderAddress) {
+		this.userOrderAddress = userOrderAddress;
+	}
+
+	public int getUserOrderID() {
+		return userOrderID;
+	}
+
+	public void setUserOrderID(int userOrderID) {
+		this.userOrderID = userOrderID;
+	}
+
+	public String getUserOrderPhone() {
+		return userOrderPhone;
+	}
+
+	public void setUserOrderPhone(String userOrderPhone) {
+		this.userOrderPhone = userOrderPhone;
+	}
+
+	public String getUserOrderEmail() {
+		return userOrderEmail;
+	}
+
+	public void setUserOrderEmail(String userOrderEmail) {
+		this.userOrderEmail = userOrderEmail;
 	}
 
 }

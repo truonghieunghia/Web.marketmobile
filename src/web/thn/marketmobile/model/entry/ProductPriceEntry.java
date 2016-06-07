@@ -10,57 +10,93 @@ import groupbase.thn.web.libs.database.Table;
 public class ProductPriceEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String product_shopUserID_Col = "product_shopUserID";
-	public static String product_shopID_Col = "product_shopID";
-	public static String product_shopName_Col = "product_shopName";
+	public static String userID_Col = "userID";
+	public static String userName_Col = "userName";
+	public static String productID_Col = "productID";
+	public static String productName_Col = "productName";
 	public static String price_Col = "price";
+	public static String priceVAT_Col = "priceVAT";
 	public static String priceDate_Col = "priceDate";
+	public static String discount_Col = "discount";
+	public static String datediscountstart_Col = "datediscountstart";
+	public static String datediscountend_Col = "datediscountend";
 
-	@ColumnNameAnnotation(ColumnName = "product_shopUserID", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String product_shopUserID;
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int userID;
 
-	@ColumnNameAnnotation(ColumnName = "product_shopID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int product_shopID;
+	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
+	private String userName;
 
-	@ColumnNameAnnotation(ColumnName = "product_shopName", FieldType = String.class, MaxLength = 45)
-	private String product_shopName;
+	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
+	private String productID;
 
-	@ColumnNameAnnotation(ColumnName = "price", FieldType = Long.class, MaxLength = 10)
-	private long price;
+	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
+	private String productName;
+
+	@ColumnNameAnnotation(ColumnName = "price", FieldType = Integer.class, MaxLength = 11)
+	private int price;
+
+	@ColumnNameAnnotation(ColumnName = "priceVAT", FieldType = Integer.class, MaxLength = 11)
+	private int priceVAT;
 
 	@ColumnNameAnnotation(ColumnName = "priceDate", FieldType = String.class, MaxLength = 8)
 	private String priceDate;
 
-	public String getProduct_shopUserID() {
-		return product_shopUserID;
+	@ColumnNameAnnotation(ColumnName = "discount", FieldType = Integer.class, MaxLength = 11)
+	private int discount;
+
+	@ColumnNameAnnotation(ColumnName = "datediscountstart", FieldType = String.class, MaxLength = 8)
+	private String datediscountstart;
+
+	@ColumnNameAnnotation(ColumnName = "datediscountend", FieldType = String.class, MaxLength = 8)
+	private String datediscountend;
+
+	public int getUserID() {
+		return userID;
 	}
 
-	public void setProduct_shopUserID(String product_shopUserID) {
-		this.product_shopUserID = product_shopUserID;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
-	public int getProduct_shopID() {
-		return product_shopID;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setProduct_shopID(int product_shopID) {
-		this.product_shopID = product_shopID;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getProduct_shopName() {
-		return product_shopName;
+	public String getProductID() {
+		return productID;
 	}
 
-	public void setProduct_shopName(String product_shopName) {
-		this.product_shopName = product_shopName;
+	public void setProductID(String productID) {
+		this.productID = productID;
 	}
 
-	public long getPrice() {
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(long price) {
+	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public int getPriceVAT() {
+		return priceVAT;
+	}
+
+	public void setPriceVAT(int priceVAT) {
+		this.priceVAT = priceVAT;
 	}
 
 	public String getPriceDate() {
@@ -69,6 +105,30 @@ public class ProductPriceEntry extends Table implements Serializable {
 
 	public void setPriceDate(String priceDate) {
 		this.priceDate = priceDate;
+	}
+
+	public int getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
+	public String getDatediscountstart() {
+		return datediscountstart;
+	}
+
+	public void setDatediscountstart(String datediscountstart) {
+		this.datediscountstart = datediscountstart;
+	}
+
+	public String getDatediscountend() {
+		return datediscountend;
+	}
+
+	public void setDatediscountend(String datediscountend) {
+		this.datediscountend = datediscountend;
 	}
 
 }

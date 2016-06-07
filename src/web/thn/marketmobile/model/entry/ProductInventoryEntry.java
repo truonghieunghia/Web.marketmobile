@@ -10,77 +10,77 @@ import groupbase.thn.web.libs.database.Table;
 public class ProductInventoryEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public static String product_shopID_Col = "product_shopID";
-	public static String product_shopName_Col = "product_shopName";
-	public static String numberInport_Col = "numberInport";
-	public static String numberExport_Col = "numberExport";
-	public static String shopID_Col = "shopID";
-	public static String numberExisting_Col = "numberExisting";
+	public static String userID_Col = "userID";
+	public static String productID_Col = "productID";
+	public static String productName_Col = "productName";
+	public static String totalImport_Col = "totalImport";
+	public static String totalExport_Col = "totalExport";
+	public static String totalExisting_Col = "totalExisting";
 
-	@ColumnNameAnnotation(ColumnName = "product_shopID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int product_shopID;
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int userID;
 
-	@ColumnNameAnnotation(ColumnName = "product_shopName", FieldType = String.class, MaxLength = 45)
-	private String product_shopName;
+	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
+	private String productID;
 
-	@ColumnNameAnnotation(ColumnName = "numberInport", FieldType = Integer.class, MaxLength = 11)
-	private int numberInport;
+	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
+	private String productName;
 
-	@ColumnNameAnnotation(ColumnName = "numberExport", FieldType = String.class, MaxLength = 45)
-	private String numberExport;
+	@ColumnNameAnnotation(ColumnName = "totalImport", FieldType = Integer.class, MaxLength = 11)
+	private int totalImport;
 
-	@ColumnNameAnnotation(ColumnName = "shopID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int shopID;
+	@ColumnNameAnnotation(ColumnName = "totalExport", FieldType = Integer.class, MaxLength = 11)
+	private int totalExport;
 
-	@ColumnNameAnnotation(ColumnName = "numberExisting", FieldType = Integer.class, MaxLength = 11)
-	private int numberExisting;
+	@ColumnNameAnnotation(ColumnName = "totalExisting", FieldType = Integer.class, MaxLength = 11)
+	private int totalExisting;
 
-	public int getProduct_shopID() {
-		return product_shopID;
+	public int getUserID() {
+		return userID;
 	}
 
-	public void setProduct_shopID(int product_shopID) {
-		this.product_shopID = product_shopID;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 
-	public String getProduct_shopName() {
-		return product_shopName;
+	public String getProductID() {
+		return productID;
 	}
 
-	public void setProduct_shopName(String product_shopName) {
-		this.product_shopName = product_shopName;
+	public void setProductID(String productID) {
+		this.productID = productID;
 	}
 
-	public int getNumberInport() {
-		return numberInport;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setNumberInport(int numberInport) {
-		this.numberInport = numberInport;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getNumberExport() {
-		return numberExport;
+	public int getTotalImport() {
+		return totalImport;
 	}
 
-	public void setNumberExport(String numberExport) {
-		this.numberExport = numberExport;
+	public void setTotalImport(int totalImport) {
+		this.totalImport = totalImport;
 	}
 
-	public int getShopID() {
-		return shopID;
+	public int getTotalExport() {
+		return totalExport;
 	}
 
-	public void setShopID(int shopID) {
-		this.shopID = shopID;
+	public void setTotalExport(int totalExport) {
+		this.totalExport = totalExport;
 	}
 
-	public int getNumberExisting() {
-		return numberExisting;
+	public int getTotalExisting() {
+		return totalExisting;
 	}
 
-	public void setNumberExisting(int numberExisting) {
-		this.numberExisting = numberExisting;
+	public void setTotalExisting(int totalExisting) {
+		this.totalExisting = totalExisting;
 	}
 
 }

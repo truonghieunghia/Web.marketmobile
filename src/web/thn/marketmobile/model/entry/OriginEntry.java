@@ -6,8 +6,8 @@ import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
 import groupbase.thn.web.libs.database.Table;
 
-@EntryAnnotation(TableName = "product_type")
-public class ProductTypeEntry extends Table implements Serializable {
+@EntryAnnotation(TableName = "origin")
+public class OriginEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	public static String id_Col = "id";

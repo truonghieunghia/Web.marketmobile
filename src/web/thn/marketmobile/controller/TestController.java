@@ -27,7 +27,7 @@ public class TestController extends controllerBase {
 		String test = "";
 		ArrayList<UserEntry> lstdata = baseFactory.getTable(UserEntry.class).selectAll() ;
 		for (UserEntry obj : lstdata){
-			test += obj.getName();
+			test += obj.getFullName();
 		}		
 //		return new View("/testview/index",ViewAction.FORWARD);
 		return new View(test, ViewAction.OUTTEXT);

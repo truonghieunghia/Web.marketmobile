@@ -17,10 +17,10 @@ public class GeneralEntry {
 		Connection connect = null;
 		Statement statement = null;
 		ResultSet resultSet = null;
-		String dbName = "marketmobile";
+		String dbName = "market";
 		ArrayList<String> listTable = new ArrayList<String>();
 		HashMap<String, Object> tabledetail = new HashMap<String, Object>();
-		String showtable = "show tables from marketmobile";
+		String showtable = "show tables from "+dbName;
 		String showcolumn = "SHOW COLUMNS FROM ";
 		// TODO Auto-generated method stub
 		String Path = System.getProperty("user.dir") + "/src/web/thn/marketmobile/model/entry/";
@@ -136,6 +136,14 @@ public class GeneralEntry {
 						Type = "String.class";
 						type = "String";
 					}
+					if (Type.contains("double")) {
+						Type = "Double.class";
+						type = "double";
+					}
+					if (Type.contains("float")) {
+						Type = "Float.class";
+						type = "float";
+					}
 					isPrimary = Key.length() > 0 ? "true" : "false";
 					isAuto_increment = Extra.length() > 0 ? "true" : "false";
 
@@ -180,6 +188,14 @@ public class GeneralEntry {
 							| Type.contains("char")) {
 						Type = "String.class";
 						type = "String";
+					}
+					if (Type.contains("double")) {
+						Type = "Double.class";
+						type = "double";
+					}
+					if (Type.contains("float")) {
+						Type = "Float.class";
+						type = "float";
 					}
 					writer.println("\tpublic " + type + " get" + Field.substring(0,1).toUpperCase()+Field.substring(1) + "() {");
 					writer.println("\t\treturn " + Field + ";");

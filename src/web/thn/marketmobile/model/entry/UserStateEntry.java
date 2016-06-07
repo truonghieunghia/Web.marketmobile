@@ -6,8 +6,8 @@ import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
 import groupbase.thn.web.libs.database.Table;
 
-@EntryAnnotation(TableName = "role")
-public class RoleEntry extends Table implements Serializable {
+@EntryAnnotation(TableName = "user_state")
+public class UserStateEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	public static String id_Col = "id";

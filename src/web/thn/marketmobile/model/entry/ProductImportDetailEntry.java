@@ -6,42 +6,42 @@ import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.database.EntryAnnotation;
 import groupbase.thn.web.libs.database.Table;
 
-@EntryAnnotation(TableName = "product_export_detail")
-public class ProductExportDetailEntry extends Table implements Serializable {
+@EntryAnnotation(TableName = "product_import_detail")
+public class ProductImportDetailEntry extends Table implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	public static String no_Col = "no";
 	public static String userID_Col = "userID";
 	public static String productID_Col = "productID";
-	public static String ProductName_Col = "ProductName";
-	public static String number_Col = "number";
+	public static String productName_Col = "productName";
 	public static String stt_Col = "stt";
+	public static String number_Col = "number";
 	public static String price_Col = "price";
 	public static String priceVAT_Col = "priceVAT";
 
 	@ColumnNameAnnotation(ColumnName = "no", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
 	private int no;
 
-	@ColumnNameAnnotation(ColumnName = "userID", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String userID;
+	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	private int userID;
 
 	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
 	private String productID;
 
-	@ColumnNameAnnotation(ColumnName = "ProductName", FieldType = String.class, MaxLength = 45)
-	private String ProductName;
-
-	@ColumnNameAnnotation(ColumnName = "number", FieldType = String.class, MaxLength = 45)
-	private String number;
+	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
+	private String productName;
 
 	@ColumnNameAnnotation(ColumnName = "stt", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
 	private int stt;
 
-	@ColumnNameAnnotation(ColumnName = "price", FieldType = Double.class)
-	private double price;
+	@ColumnNameAnnotation(ColumnName = "number", FieldType = Float.class)
+	private float number;
 
-	@ColumnNameAnnotation(ColumnName = "priceVAT", FieldType = Double.class)
-	private double priceVAT;
+	@ColumnNameAnnotation(ColumnName = "price", FieldType = Integer.class, MaxLength = 11)
+	private int price;
+
+	@ColumnNameAnnotation(ColumnName = "priceVAT", FieldType = Integer.class, MaxLength = 11)
+	private int priceVAT;
 
 	public int getNo() {
 		return no;
@@ -51,11 +51,11 @@ public class ProductExportDetailEntry extends Table implements Serializable {
 		this.no = no;
 	}
 
-	public String getUserID() {
+	public int getUserID() {
 		return userID;
 	}
 
-	public void setUserID(String userID) {
+	public void setUserID(int userID) {
 		this.userID = userID;
 	}
 
@@ -68,19 +68,11 @@ public class ProductExportDetailEntry extends Table implements Serializable {
 	}
 
 	public String getProductName() {
-		return ProductName;
+		return productName;
 	}
 
 	public void setProductName(String productName) {
-		this.ProductName = productName;
-	}
-
-	public String getNumber() {
-		return number;
-	}
-
-	public void setNumber(String number) {
-		this.number = number;
+		this.productName = productName;
 	}
 
 	public int getStt() {
@@ -91,19 +83,27 @@ public class ProductExportDetailEntry extends Table implements Serializable {
 		this.stt = stt;
 	}
 
-	public double getPrice() {
+	public float getNumber() {
+		return number;
+	}
+
+	public void setNumber(float number) {
+		this.number = number;
+	}
+
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 
-	public double getPriceVAT() {
+	public int getPriceVAT() {
 		return priceVAT;
 	}
 
-	public void setPriceVAT(double priceVAT) {
+	public void setPriceVAT(int priceVAT) {
 		this.priceVAT = priceVAT;
 	}
 

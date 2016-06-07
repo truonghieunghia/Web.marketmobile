@@ -13,7 +13,7 @@ public class LocationEntry extends Table implements Serializable {
 	public static String id_Col = "id";
 	public static String name_Col = "name";
 
-	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
 	private int id;
 
 	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
