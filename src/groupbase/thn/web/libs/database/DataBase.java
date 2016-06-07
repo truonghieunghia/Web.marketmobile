@@ -24,7 +24,7 @@ public class DataBase {
 	private ResultData mResultData = null;
 	private PreparedStatement mPreparedStatement = null;
 
-	public <T> T getTable(Class<T> entry) {
+	public <T> T getEntry(Class<T> entry) {
 		try {
 			return entry.cast(entry.newInstance());
 		} catch (InstantiationException e) {
@@ -155,6 +155,7 @@ public class DataBase {
 			for (int i = 0; i < fields.size(); i++) {
 
 				Field field = fields.get(i);
+				field.setAccessible(true);
 				ColumnNameAnnotation columnNameAnnotation = field.getAnnotation(ColumnNameAnnotation.class);
 				if (columnNameAnnotation != null) {
 					if (!columnNameAnnotation.isAuto_increment()) {

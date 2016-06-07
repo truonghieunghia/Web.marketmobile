@@ -16,16 +16,16 @@ public class SystemNoEntry extends Table implements Serializable {
 	public static String orderNo_Col = "orderNo";
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
+	private int userID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "importNo", FieldType = Integer.class, MaxLength = 11)
-	private int importNo;
+	private int importNo = 0;
 
 	@ColumnNameAnnotation(ColumnName = "exportNo", FieldType = Integer.class, MaxLength = 11)
-	private int exportNo;
+	private int exportNo = 0;
 
 	@ColumnNameAnnotation(ColumnName = "orderNo", FieldType = Integer.class, MaxLength = 11)
-	private int orderNo;
+	private int orderNo = 0;
 
 	public int getUserID() {
 		return userID;

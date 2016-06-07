@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import groupbase.thn.web.libs.view.FormAnnotation;
+import groupbase.thn.web.libs.database.ColumnNameAnnotation;
 import groupbase.thn.web.libs.view.View;
 
 public abstract class controllerBase extends HttpServlet {
@@ -191,9 +191,9 @@ public abstract class controllerBase extends HttpServlet {
 
 			for (Field field : fields) {
 				field.setAccessible(true);
-				FormAnnotation formAnnotation = field.getAnnotation(FormAnnotation.class);
+				ColumnNameAnnotation formAnnotation = field.getAnnotation(ColumnNameAnnotation.class);
 				if (formAnnotation != null) {
-					String[] value = mRequest.getParameterValues(formAnnotation.Name());
+					String[] value = mRequest.getParameterValues(formAnnotation.ColumnName());
 
 					if (value != null) {
 						if (value.length == 1) {

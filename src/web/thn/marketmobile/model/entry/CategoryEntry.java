@@ -16,16 +16,16 @@ public class CategoryEntry extends Table implements Serializable {
 	public static String pathName_Col = "pathName";
 
 	@ColumnNameAnnotation(ColumnName = "id", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String id;
+	private String id = "";
 
 	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
-	private String name;
+	private String name = "";
 
 	@ColumnNameAnnotation(ColumnName = "pathID", FieldType = String.class, MaxLength = 45)
-	private String pathID;
+	private String pathID = "";
 
 	@ColumnNameAnnotation(ColumnName = "pathName", FieldType = String.class)
-	private String pathName;
+	private String pathName = "";
 
 	public String getId() {
 		return id;

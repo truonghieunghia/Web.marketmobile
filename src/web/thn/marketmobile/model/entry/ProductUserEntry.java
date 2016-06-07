@@ -27,49 +27,49 @@ public class ProductUserEntry extends Table implements Serializable {
 	public static String stateName_Col = "stateName";
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
+	private int userID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userBranchID", FieldType = Integer.class, MaxLength = 11)
-	private int userBranchID;
+	private int userBranchID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
-	private String userName;
+	private String userName = "";
 
 	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String productID;
+	private String productID = "";
 
 	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
-	private String productName;
+	private String productName = "";
 
 	@ColumnNameAnnotation(ColumnName = "originID", FieldType = Integer.class, MaxLength = 11)
-	private int originID;
+	private int originID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "originName", FieldType = String.class, MaxLength = 45)
-	private String originName;
+	private String originName = "";
 
 	@ColumnNameAnnotation(ColumnName = "brandID", FieldType = Integer.class, MaxLength = 11)
-	private int brandID;
+	private int brandID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "brandName", FieldType = String.class, MaxLength = 45)
-	private String brandName;
+	private String brandName = "";
 
 	@ColumnNameAnnotation(ColumnName = "categoryID", FieldType = String.class, MaxLength = 45)
-	private String categoryID;
+	private String categoryID = "0";
 
 	@ColumnNameAnnotation(ColumnName = "categoryName", FieldType = String.class, MaxLength = 45)
-	private String categoryName;
+	private String categoryName = "";
 
 	@ColumnNameAnnotation(ColumnName = "detail", FieldType = String.class)
-	private String detail;
+	private String detail = "";
 
 	@ColumnNameAnnotation(ColumnName = "extID", FieldType = Integer.class, MaxLength = 11)
-	private int extID;
+	private int extID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "stateID", FieldType = Integer.class, MaxLength = 11)
-	private int stateID;
+	private int stateID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "stateName", FieldType = String.class, MaxLength = 45)
-	private String stateName;
+	private String stateName = "";
 
 	public int getUserID() {
 		return userID;

@@ -23,37 +23,37 @@ public class ProductOrderEntry extends Table implements Serializable {
 	public static String userOrderEmail_Col = "userOrderEmail";
 
 	@ColumnNameAnnotation(ColumnName = "no", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int no;
+	private int no = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
+	private int userID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "orderDate", FieldType = String.class, MaxLength = 8)
-	private String orderDate;
+	private String orderDate = "";
 
 	@ColumnNameAnnotation(ColumnName = "totalMoney", FieldType = Double.class)
-	private double totalMoney;
+	private double totalMoney = 0;
 
 	@ColumnNameAnnotation(ColumnName = "comment", FieldType = String.class)
-	private String comment;
+	private String comment = "";
 
 	@ColumnNameAnnotation(ColumnName = "product_ordercol", FieldType = String.class, MaxLength = 45)
-	private String product_ordercol;
+	private String product_ordercol = "";
 
 	@ColumnNameAnnotation(ColumnName = "userOrderName", FieldType = String.class, MaxLength = 45)
-	private String userOrderName;
+	private String userOrderName = "";
 
 	@ColumnNameAnnotation(ColumnName = "userOrderAddress", FieldType = String.class, MaxLength = 45)
-	private String userOrderAddress;
+	private String userOrderAddress = "";
 
 	@ColumnNameAnnotation(ColumnName = "userOrderID", FieldType = Integer.class, MaxLength = 11)
-	private int userOrderID;
+	private int userOrderID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userOrderPhone", FieldType = String.class, MaxLength = 45)
-	private String userOrderPhone;
+	private String userOrderPhone = "";
 
 	@ColumnNameAnnotation(ColumnName = "userOrderEmail", FieldType = String.class, MaxLength = 45)
-	private String userOrderEmail;
+	private String userOrderEmail = "";
 
 	public int getNo() {
 		return no;

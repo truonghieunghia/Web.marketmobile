@@ -22,34 +22,34 @@ public class ProductPriceEntry extends Table implements Serializable {
 	public static String datediscountend_Col = "datediscountend";
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
+	private int userID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
-	private String userName;
+	private String userName = "";
 
 	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String productID;
+	private String productID = "";
 
 	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
-	private String productName;
+	private String productName = "";
 
 	@ColumnNameAnnotation(ColumnName = "price", FieldType = Integer.class, MaxLength = 11)
-	private int price;
+	private int price = 0;
 
 	@ColumnNameAnnotation(ColumnName = "priceVAT", FieldType = Integer.class, MaxLength = 11)
-	private int priceVAT;
+	private int priceVAT = 0;
 
 	@ColumnNameAnnotation(ColumnName = "priceDate", FieldType = String.class, MaxLength = 8)
-	private String priceDate;
+	private String priceDate = "";
 
 	@ColumnNameAnnotation(ColumnName = "discount", FieldType = Integer.class, MaxLength = 11)
-	private int discount;
+	private int discount = 0;
 
 	@ColumnNameAnnotation(ColumnName = "datediscountstart", FieldType = String.class, MaxLength = 8)
-	private String datediscountstart;
+	private String datediscountstart = "";
 
 	@ColumnNameAnnotation(ColumnName = "datediscountend", FieldType = String.class, MaxLength = 8)
-	private String datediscountend;
+	private String datediscountend = "";
 
 	public int getUserID() {
 		return userID;

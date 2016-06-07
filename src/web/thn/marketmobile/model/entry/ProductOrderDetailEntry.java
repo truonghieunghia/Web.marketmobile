@@ -20,28 +20,28 @@ public class ProductOrderDetailEntry extends Table implements Serializable {
 	public static String priceVAT_Col = "priceVAT";
 
 	@ColumnNameAnnotation(ColumnName = "no", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int no;
+	private int no = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
+	private int userID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String productID;
+	private String productID = "";
 
 	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
-	private String productName;
+	private String productName = "";
 
 	@ColumnNameAnnotation(ColumnName = "stt", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int stt;
+	private int stt = 0;
 
 	@ColumnNameAnnotation(ColumnName = "price", FieldType = Double.class)
-	private double price;
+	private double price = 0;
 
 	@ColumnNameAnnotation(ColumnName = "number", FieldType = Double.class)
-	private double number;
+	private double number = 0;
 
 	@ColumnNameAnnotation(ColumnName = "priceVAT", FieldType = Double.class)
-	private double priceVAT;
+	private double priceVAT = 0;
 
 	public int getNo() {
 		return no;

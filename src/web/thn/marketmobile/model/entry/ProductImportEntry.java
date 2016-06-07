@@ -17,19 +17,19 @@ public class ProductImportEntry extends Table implements Serializable {
 	public static String comment_Col = "comment";
 
 	@ColumnNameAnnotation(ColumnName = "no", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int no;
+	private int no = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
+	private int userID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "importDate", FieldType = String.class, MaxLength = 8)
-	private String importDate;
+	private String importDate = "";
 
 	@ColumnNameAnnotation(ColumnName = "totalMoney", FieldType = String.class, MaxLength = 45)
-	private String totalMoney;
+	private String totalMoney = "";
 
 	@ColumnNameAnnotation(ColumnName = "comment", FieldType = String.class)
-	private String comment;
+	private String comment = "";
 
 	public int getNo() {
 		return no;

@@ -32,68 +32,68 @@ public class UserEntry extends Table implements Serializable {
 	public static String logo_Col = "logo";
 	public static String type_Col = "type";
 
-	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
+	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, isAuto_increment = true, MaxLength = 11)
 	private int id;
 
 	@ColumnNameAnnotation(ColumnName = "email", FieldType = String.class, MaxLength = 45)
-	private String email;
+	private String email = "";
 
 	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
-	private String userName;
+	private String userName = "";
 
 	@ColumnNameAnnotation(ColumnName = "fullName", FieldType = String.class, MaxLength = 45)
-	private String fullName;
+	private String fullName = "";
 
 	@ColumnNameAnnotation(ColumnName = "birthDate", FieldType = String.class, MaxLength = 8)
-	private String birthDate;
+	private String birthDate = "";
 
 	@ColumnNameAnnotation(ColumnName = "sex", FieldType = Integer.class, MaxLength = 11)
-	private int sex;
+	private int sex = 0;
 
 	@ColumnNameAnnotation(ColumnName = "sexName", FieldType = String.class, MaxLength = 45)
-	private String sexName;
+	private String sexName = "";
 
 	@ColumnNameAnnotation(ColumnName = "passWord", FieldType = String.class, MaxLength = 45)
-	private String passWord;
+	private String passWord = "";
 
 	@ColumnNameAnnotation(ColumnName = "address", FieldType = String.class, MaxLength = 45)
-	private String address;
+	private String address = "";
 
 	@ColumnNameAnnotation(ColumnName = "deviceID", FieldType = String.class, MaxLength = 45)
-	private String deviceID;
+	private String deviceID = "";
 
 	@ColumnNameAnnotation(ColumnName = "locationID", FieldType = Integer.class, MaxLength = 11)
-	private int locationID;
+	private int locationID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "locationName", FieldType = String.class, MaxLength = 45)
-	private String locationName;
+	private String locationName = "";
 
 	@ColumnNameAnnotation(ColumnName = "roleID", FieldType = Integer.class, MaxLength = 11)
-	private int roleID;
+	private int roleID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "roleName", FieldType = String.class, MaxLength = 45)
-	private String roleName;
+	private String roleName = "";
 
 	@ColumnNameAnnotation(ColumnName = "stateID", FieldType = Integer.class, MaxLength = 11)
-	private int stateID;
+	private int stateID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "stateName", FieldType = String.class, MaxLength = 45)
-	private String stateName;
+	private String stateName = "";
 
 	@ColumnNameAnnotation(ColumnName = "branchID", FieldType = Integer.class, MaxLength = 11)
-	private int branchID;
+	private int branchID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "latitude", FieldType = String.class, MaxLength = 45)
-	private String latitude;
+	private String latitude = "";
 
 	@ColumnNameAnnotation(ColumnName = "longitude", FieldType = String.class, MaxLength = 45)
-	private String longitude;
+	private String longitude = "";
 
 	@ColumnNameAnnotation(ColumnName = "logo", FieldType = String.class)
-	private String logo;
+	private String logo = "";
 
 	@ColumnNameAnnotation(ColumnName = "type", FieldType = Integer.class, MaxLength = 11)
-	private int type;
+	private int type = 1;
 
 	public int getId() {
 		return id;

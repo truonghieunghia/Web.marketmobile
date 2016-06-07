@@ -15,13 +15,13 @@ public class UserBranchEntry extends Table implements Serializable {
 	public static String userName_Col = "userName";
 
 	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int id;
+	private int id = 0;
 
 	@ColumnNameAnnotation(ColumnName = "user_id", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int user_id;
+	private int user_id = 0;
 
 	@ColumnNameAnnotation(ColumnName = "userName", FieldType = String.class, MaxLength = 45)
-	private String userName;
+	private String userName = "";
 
 	public int getId() {
 		return id;

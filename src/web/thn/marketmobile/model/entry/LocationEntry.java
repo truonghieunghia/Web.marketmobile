@@ -14,10 +14,10 @@ public class LocationEntry extends Table implements Serializable {
 	public static String name_Col = "name";
 
 	@ColumnNameAnnotation(ColumnName = "id", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int id;
+	private int id = 0;
 
 	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
-	private String name;
+	private String name = "";
 
 	public int getId() {
 		return id;

@@ -17,7 +17,7 @@ public class UserRoleEntry extends Table implements Serializable {
 	private int id;
 
 	@ColumnNameAnnotation(ColumnName = "name", FieldType = String.class, MaxLength = 45)
-	private String name;
+	private String name = "";
 
 	public int getId() {
 		return id;

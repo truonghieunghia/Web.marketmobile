@@ -18,22 +18,22 @@ public class ProductInventoryEntry extends Table implements Serializable {
 	public static String totalExisting_Col = "totalExisting";
 
 	@ColumnNameAnnotation(ColumnName = "userID", FieldType = Integer.class, isPrimary = true, MaxLength = 11)
-	private int userID;
+	private int userID = 0;
 
 	@ColumnNameAnnotation(ColumnName = "productID", FieldType = String.class, isPrimary = true, MaxLength = 45)
-	private String productID;
+	private String productID = "";
 
 	@ColumnNameAnnotation(ColumnName = "productName", FieldType = String.class, MaxLength = 45)
-	private String productName;
+	private String productName = "";
 
 	@ColumnNameAnnotation(ColumnName = "totalImport", FieldType = Integer.class, MaxLength = 11)
-	private int totalImport;
+	private int totalImport = 0;
 
 	@ColumnNameAnnotation(ColumnName = "totalExport", FieldType = Integer.class, MaxLength = 11)
-	private int totalExport;
+	private int totalExport = 0;
 
 	@ColumnNameAnnotation(ColumnName = "totalExisting", FieldType = Integer.class, MaxLength = 11)
-	private int totalExisting;
+	private int totalExisting = 0;
 
 	public int getUserID() {
 		return userID;

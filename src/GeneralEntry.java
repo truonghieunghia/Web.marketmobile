@@ -110,6 +110,7 @@ public class GeneralEntry {
 					String Type = columnDetail.get("Type").toString();
 					String Key = columnDetail.get("Key").toString();
 					String Extra = columnDetail.get("Extra").toString();
+					String defaultValue = columnDetail.get("Default")==null?"\"\"":columnDetail.get("Default").toString();
 					int start = Type.indexOf('(');
 					int end = Type.indexOf(')');
 					String length;
@@ -129,20 +130,32 @@ public class GeneralEntry {
 							Type = "Integer.class";
 							type = "int";
 						}
+						if (columnDetail.get("Default")==null){
+							defaultValue = "0";
+						}
 					}
 
 					if (Type.contains("varchar") | Type.contains("tinytext") | Type.contains("text")
 							| Type.contains("char")) {
 						Type = "String.class";
 						type = "String";
+						if (columnDetail.get("Default")!=null){
+							defaultValue = "\""+defaultValue+"\"";
+						}
 					}
 					if (Type.contains("double")) {
 						Type = "Double.class";
 						type = "double";
+						if (columnDetail.get("Default")==null){
+							defaultValue = "0";
+						}
 					}
 					if (Type.contains("float")) {
 						Type = "Float.class";
 						type = "float";
+						if (columnDetail.get("Default")==null){
+							defaultValue = "0";
+						}
 					}
 					isPrimary = Key.length() > 0 ? "true" : "false";
 					isAuto_increment = Extra.length() > 0 ? "true" : "false";
@@ -159,7 +172,11 @@ public class GeneralEntry {
 					}
 					data = data + ")";
 					writer.println(data);
-					writer.println("\tprivate " + type + " " + Field + ";");
+					if (Boolean.parseBoolean(isAuto_increment)){
+						writer.println("\tprivate " + type + " " + Field + ";");	
+					}else{
+						writer.println("\tprivate " + type + " " + Field + " = "+defaultValue+";");
+					}				
 					writer.println();
 
 				}

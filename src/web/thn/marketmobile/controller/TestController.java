@@ -25,7 +25,7 @@ public class TestController extends controllerBase {
 //		ResultData result = connect.getResultData();
 		DataBase baseFactory = new DataBase();
 		String test = "";
-		ArrayList<UserEntry> lstdata = baseFactory.getTable(UserEntry.class).selectAll() ;
+		ArrayList<UserEntry> lstdata = baseFactory.getEntry(UserEntry.class).selectAll() ;
 		for (UserEntry obj : lstdata){
 			test += obj.getFullName();
 		}		
