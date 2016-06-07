@@ -50,7 +50,7 @@ public abstract class controllerBase extends HttpServlet {
 	protected void service(HttpServletRequest arg0, HttpServletResponse arg1) throws ServletException, IOException {
 		mRequest = arg0;
 		mResponse = arg1;
-		mResponse.setContentType(mContentType);
+		mResponse.setContentType(getContentType());
 		mPrintWriter = mResponse.getWriter();
 		mContext = getServletContext();
 		super.service(arg0, arg1);
@@ -68,6 +68,9 @@ public abstract class controllerBase extends HttpServlet {
 		showView(doPost());
 	}
 
+	protected String getContentType() {
+		return mContentType;
+	}
 	private void showView(View view) {
 		RequestDispatcher mDispatcher = mContext.getRequestDispatcher(getPath() + view.getViewName() + ".jsp");
 		HashMap<String, Object> data = view.getData();

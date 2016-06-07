@@ -1,5 +1,7 @@
 package web.thn.marketmobile.controller.api;
 
+import java.util.ArrayList;
+
 import javax.servlet.annotation.WebServlet;
 
 import groupbase.thn.web.libs.view.View;
@@ -16,8 +18,9 @@ public class UserController extends ApiControllerBase {
 
 	@Override
 	protected View doGet() {
-		// TODO Auto-generated method stub
-		return new View("hello register new user", ViewAction.OUTTEXT);
+		UserModel userModel = new UserModel();
+		ArrayList<UserEntry>lst = userModel.getAll();		
+		return new View(toJson("list_user", lst), ViewAction.OUTTEXT);
 	}
 
 	@Override
