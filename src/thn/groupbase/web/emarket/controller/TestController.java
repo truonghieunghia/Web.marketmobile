@@ -1,14 +1,13 @@
 package thn.groupbase.web.emarket.controller;
 
-import java.util.ArrayList;
-
 import javax.servlet.annotation.WebServlet;
 
 import groupbase.thn.web.libs.controller.controllerBase;
 import groupbase.thn.web.libs.database.DataBase;
+import groupbase.thn.web.libs.database.DataRow;
+import groupbase.thn.web.libs.database.ResultData;
 import groupbase.thn.web.libs.view.View;
 import groupbase.thn.web.libs.view.ViewAction;
-import thn.groupbase.web.emarket.model.entry.UserEntry;
 
 @WebServlet(urlPatterns = { "/test.html" })
 public class TestController extends controllerBase {
@@ -25,10 +24,19 @@ public class TestController extends controllerBase {
 //		ResultData result = connect.getResultData();
 		DataBase baseFactory = new DataBase();
 		String test = "";
-		ArrayList<UserEntry> lstdata = baseFactory.getEntry(UserEntry.class).selectAll() ;
-		for (UserEntry obj : lstdata){
-			test += obj.getFullName();
-		}		
+//		ArrayList<UserEntry> lstdata = baseFactory.getEntry(UserEntry.class).selectAll() ;
+//		for (UserEntry obj : lstdata){
+//			test += obj.getFullName();
+//		}		
+		baseFactory.callProc("test_procedure()", null, null);
+		ResultData data  = baseFactory.getResultData();
+		for(DataRow dataRow :data.getListData() ){
+			for(int i =0 ;i<data.getColumnCount();i++){
+				test+=dataRow.getDataColumn(i).getValue().toString();
+			}
+			
+		}
+//		test = baseFactory.getResultData().getDataRow(0).getDataColumn(1).getValue().toString();
 //		return new View("/testview/index",ViewAction.FORWARD);
 		return new View(test, ViewAction.OUTTEXT);
 	}

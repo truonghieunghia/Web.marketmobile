@@ -1,6 +1,7 @@
 package groupbase.thn.web.libs.database;
 
 import java.lang.reflect.Field;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +24,7 @@ public class DataBase {
 	private ResultSet mResultSet = null;
 	private ResultData mResultData = null;
 	private PreparedStatement mPreparedStatement = null;
+	private CallableStatement mCallableStatement = null;
 
 	public <T> T getEntry(Class<T> entry) {
 		try {
@@ -80,10 +82,13 @@ public class DataBase {
 				this.mStatement.close();
 			if (this.mPreparedStatement != null)
 				this.mPreparedStatement.close();
+			if (mCallableStatement != null)
+				mCallableStatement.close();
 		} catch (SQLException e) {
 			this.mConnection = null;
 			this.mResultSet = null;
 			this.mStatement = null;
+			this.mCallableStatement = null;
 		}
 	}
 
@@ -334,6 +339,36 @@ public class DataBase {
 		executeQuery(sql, parameters);
 		ResultData resultData = getResultData();
 		return resultData.getAllDataRow(entry);
+	}
+
+	public void callProc(String procName, ArrayList<ParameterSql> parametersIn, ArrayList<ParameterSql> parametersOut) {
+		int index = 0;
+		try {
+			if (mConnection == null) {
+				open();
+			}
+			mCallableStatement = mConnection.prepareCall("{call " + procName + "}");
+			if (parametersIn != null) {
+				for (int i = 0; i < parametersIn.size(); i++) {
+					ParameterSql parameterSql = parametersIn.get(i);
+					index = i + 1;
+					mCallableStatement.setObject(index, parameterSql.getClassType().cast(parameterSql.getValue()));
+				}
+			}
+			if (parametersOut != null) {
+				for (int i = 0; i < parametersOut.size(); i++) {
+					ParameterSql parameterSql = parametersOut.get(i);
+					index = i + 1;
+					mCallableStatement.registerOutParameter(index, parameterSql.convertToSqlType());
+				}
+			}
+			mResultSet = mCallableStatement.executeQuery();
+			mResultData = new ResultData(mResultSet);
+		} catch (SQLException e) {
+			close();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public ResultData getResultData() {

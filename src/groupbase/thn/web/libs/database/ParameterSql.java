@@ -24,4 +24,19 @@ public class ParameterSql {
 	public void setValue(Object value) {
 		this.mValue = value;
 	}
+	public int convertToSqlType(){
+		if (mClassType == String.class){
+			return java.sql.Types.VARCHAR;
+		}
+		if (mClassType == Integer.class){
+			return java.sql.Types.INTEGER;
+		}
+		if (mClassType == Float.class){
+			return java.sql.Types.FLOAT;
+		}
+		if (mClassType == Double.class){
+			return java.sql.Types.DOUBLE;
+		}
+		return 0;
+	}
 }

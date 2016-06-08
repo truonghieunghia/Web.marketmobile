@@ -17,4 +17,8 @@ public class UserModel {
 	public ArrayList<UserEntry> getAll() {
 		return mDB.getEntry(UserEntry.class).selectAll();
 	}
+	public boolean isLogin(String userName,String passWord){
+		
+		return true;
+	}
 }
