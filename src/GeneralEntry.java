@@ -1,7 +1,5 @@
 import java.util.HashMap;
 
-import groupbase.thn.web.libs.database.Table;
-
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class GeneralEntry {
 
@@ -23,9 +20,8 @@ public class GeneralEntry {
 		String showtable = "show tables from "+dbName;
 		String showcolumn = "SHOW COLUMNS FROM ";
 		// TODO Auto-generated method stub
-		String Path = System.getProperty("user.dir") + "/src/web/thn/marketmobile/model/entry/";
-		String Pathjson = System.getProperty("user.dir") + "/src/groupbase/thn/web/marketmobile/api/result/json/";
-		String packageEntry ="web.thn.marketmobile.model.entry;";
+		String Path = System.getProperty("user.dir") + "/src/thn/groupbase/web/emarket/model/entry/";	
+		String packageEntry ="thn.groupbase.web.emarket.model.entry;";
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -55,19 +51,6 @@ public class GeneralEntry {
 			statement.close();
 			connect.close();
 			//
-//			for (String table : listTable) {
-//				PrintWriter writer = new PrintWriter(Pathjson + table + "EntryJson.java");
-//				writer.println("package groupbase.thn.web.buyandsell.api.result.json;");
-//				writer.println();
-//				writer.println("import java.util.ArrayList;");
-//				writer.println();
-//				writer.println("import groupbase.thn.web.buyandsell.entry." + table + "Entry;");
-//				writer.println();
-//				writer.println("public class " + table + "EntryJson {");
-//				writer.println("\tpublic ArrayList<" + table + "Entry> " + table.toLowerCase() + "_list;");
-//				writer.println("}");
-//				writer.close();
-//			}
 			for (String table : listTable) {
 				String clazzname="";
 				String[] lstclazzname = table.split("_");
