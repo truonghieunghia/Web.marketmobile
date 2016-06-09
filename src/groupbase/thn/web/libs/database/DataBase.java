@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -341,7 +342,9 @@ public class DataBase {
 		return resultData.getAllDataRow(entry);
 	}
 
-	public void callProc(String procName, ArrayList<ParameterSql> parametersIn, ArrayList<ParameterSql> parametersOut) {
+	public HashMap<String, Object> callProc(String procName, ArrayList<ParameterSql> parametersIn,
+			ArrayList<ParameterSql> parametersOut) {
+		HashMap<String, Object> outValue = new HashMap<>();
 		int index = 0;
 		try {
 			if (mConnection == null) {
@@ -356,19 +359,49 @@ public class DataBase {
 				}
 			}
 			if (parametersOut != null) {
-				for (int i = 0; i < parametersOut.size(); i++) {
-					ParameterSql parameterSql = parametersOut.get(i);
-					index = i + 1;
-					mCallableStatement.registerOutParameter(index, parameterSql.convertToSqlType());
+				for (ParameterSql parameterSql : parametersOut) {
+					mCallableStatement.registerOutParameter(parameterSql.getValue().toString(),
+							parameterSql.convertToSqlType());
 				}
 			}
+			mCallableStatement.executeUpdate();
+			for (ParameterSql parameterSql : parametersOut) {
+				index = index + 1;
+				outValue.put(parameterSql.getValue().toString(), mCallableStatement.getObject(index));
+			}
+		} catch (SQLException e) {
+			close();
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+		return outValue;
+	}
+
+	public ResultData callProc(String procName, ArrayList<ParameterSql> parametersIn) {
+		int index = 0;
+		try {
+			if (mConnection == null) {
+				open();
+			}
+			mCallableStatement = mConnection.prepareCall("{call " + procName + "}");
+			if (parametersIn != null) {
+				for (int i = 0; i < parametersIn.size(); i++) {
+					ParameterSql parameterSql = parametersIn.get(i);
+					index = i + 1;
+					mCallableStatement.setObject(index, parameterSql.getClassType().cast(parameterSql.getValue()));
+				}
+			}
+
 			mResultSet = mCallableStatement.executeQuery();
 			mResultData = new ResultData(mResultSet);
 		} catch (SQLException e) {
 			close();
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return null;
 		}
+		return mResultData;
 	}
 
 	public ResultData getResultData() {
